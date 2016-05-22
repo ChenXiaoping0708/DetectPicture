@@ -1,0 +1,73 @@
+1 人脸检测
+POST request 传入请求
+_POST['request']=detect 图片检测
+_POST['urladd']
+_POST['isbigface']是否检测大脸，0表示正常 1表示大脸
+成功 codes=0 
+返回格式 {“codes“：0，”facenum":n,"data"：{[0]{
+face_id	String	人脸标识
+x	object	人脸框左上角x占图片宽度的百分比
+y	object	人脸框左上角y占图片高度的百分比
+width	object	人脸框宽度占图片宽度的百分比
+height	object	人脸框高度占图片高度的百分比
+gender	string	男 女
+age	object	年龄 [0~100]
+expression	object	正常 微笑 大笑
+beauty	object	魅力 [0~100]
+glass	Bool	是否有眼镜 [true,false]
+pitch	Int	上下偏移[-30,30]
+yaw	Int	左右偏移[-30,30]
+roll	Int	平面旋转[-180,180]
+url    图片网址
+}
+[1].....}
+失败 codes=else 各种失败 
+返回格式 {“code”：else，”facenum":0，“data”：失败信息}
+200  未选择图片
+202  未选择是否大脸
+
+request：compare
+ $_POST ['url1']  $_POST ['url2'] 
+返回格式 {“code“：0，"data":相似度}
+code不是0，data是错误
+
+request：find
+POST ['urladd']多人图片
+POST ['comurl']想要找的人的图片
+返回格式{'codes' ： 0,similarity'：$max,'data'：$data}
+$max是相似度，数字
+$data同detect
+
+request：picturetag图片标签
+_POST['urladd']
+返回格式{'codes' => 0,'tags' =>n（标签数目）,'data' => $res ['tags'] }
+data 数组
+"data": [0{
+                "tag_name"（标签名字）: "天空",
+                "tag_confidence"（置信度）: 100
+            }
+          1。。。。]
+codes非0 错误 tags=0， data=出错信息
+
+request:bonus 随机圈出一个脸
+_POST['urladd']
+返回格式：{codes:0 data;array}
+data 
+x	object	人脸框左上角x占图片宽度的百分比
+y	object	人脸框左上角y占图片高度的百分比
+width	object	人脸框宽度占图片宽度的百分比
+height	object	人脸框高度占图片高度的百分比
+url 图片网址
+codes非0 错误 data=出错信息
+
+request:symmetry对称
+_POST['urladd']
+返回格式{’codes‘：0，’facenum'：n,data'数组}
+data n是几就是几维，里面的数据，如data[0]['url_old']
+'url_old'原图
+'url_l'左对称
+'url_r'右对称
+
+request：fudiao
+POST[urladd]
+返回名字url:内容：图片地址

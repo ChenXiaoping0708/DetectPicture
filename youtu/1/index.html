@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>图趣——TuTrick</title>
+
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="upload.css">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<nav role="navigation" class="navbar navbar-fixed-top navbar-default" id="navbar">
+  <div class="container">
+    <div class="navbar-header"><a href="javascript:" class="navbar-brand">TuTrick</a></div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">超级实验室 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#picwall" id="clduichen">对称脸实验室</a></li>
+            <li><a href="#picwall" id="clhuafeng">画风突变实验室</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#picwall" id="clfudiao">浮雕画风</a></li>
+            <li><a href="#picwall" id="clsumiao">素描画风</a></li>
+
+           <!-- <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>-->
+          </ul>
+        </li>
+        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">玩转人脸 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#picwall" id="clfindsb">谁最像你</a></li>
+            <li><a href="#picwall" id="clrandom">点兵点将</a></li>
+           <!-- <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>-->
+          </ul>
+        </li>
+        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">图趣剖析 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#picwall" id="cldetect">人脸检测</a></li>
+            <li><a href="#picwall" id="clsimilar">人脸相似度</a></li>
+            <li><a href="#picwall" id="clfaxian">图片大发现</a></li>
+           <!-- <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>-->
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="jumbotron" id="headjumbotron">
+  <h1>图趣</h1>
+  <h3>——带你360°玩转图片！</h3>
+</div>
+<div id="picwall">
+<img id="wallpic0" src="" border="0" width="150px" height="150px"/>
+<img id="wallpic1" src="" border="0" width="150px" height="150px"/>
+<img id="wallpic2" src="" border="0" width="150px" height="150px"/>
+<img id="wallpic3" src="" border="0" width="150px" height="150px"/>
+<img id="wallpic4" src="" border="0" width="150px" height="150px"/>
+<img id="wallpic5" src="" border="0" width="150px" height="150px"/>
+<img id="wallpic6" src="" border="0" width="150px" height="150px"/>
+<img id="wallpic7" src="" border="0" width="150px" height="150px"/>
+<img id="wallpic8" src="" border="0" width="150px" height="150px"/>
+<img id="wallpic9" src="" border="0" width="150px" height="150px"/>
+<img id="wallpic10" src="" border="0" width="150px" height="150px"/>
+<img id="wallpic11" src="" border="0" width="150px" height="150px"/>
+<img id="wallpic12" src="" border="0" width="150px" height="150px"/>
+<img id="wallpic13" src="" border="0" width="150px" height="150px"/>
+<img id="wallpic14" src="" border="0" width="150px" height="150px"/>
+<img id="wallpic15" src="" border="0" width="150px" height="150px"/>
+<img id="wallpic16" src="" border="0" width="150px" height="150px"/>
+<img id="wallpic17" src="" border="0" width="150px" height="150px"/>
+
+</div>
+<div class="row">
+  <div class="col-md-2">
+  <ul id="single-list">
+    <li id="duichen">对称脸实验室</li>
+    <li id="findsb">谁最像你</li>
+    <li id="picstyle"><span id="picstylespan">画风突变实验室</span>
+    <ul id="sub-list" style="display:none">
+    <li id="fudiao">浮雕画风</li>
+    <li id="sumiao">素描画风</li>
+    </ul>
+    </li>
+    <li id="randomchoose">点兵点将</li>
+    <li id="facedetect">人脸检测</li>
+  	<li id="facecomp">人脸相似度</li>
+  	<li id="picfaxian">图片大发现</li>
+  </ul>
+  
+  </div>
+  <div class="col-md-4">
+    <form id="uploadForm" action="upload.php" method="post" enctype="multipart/form-data">
+      <div class="upload_box">
+        <div class="upload_main">
+          <div class="upload_choose">
+            <input id="fileImage" type="file" size="30" name="fileselect[]">
+            <!--<span id="fileDragArea" class="upload_drag_area">或者将本地图片拖到此处</span>--> </div>
+          <div id="preview" class="upload_preview"></div>
+        </div>
+        <div class="upload_submit">
+          <button type="button" id="fileSubmit" class="upload_submit_btn">确认检测图片</button>
+        </div>
+        <div id="uploadInf" class="upload_inf"></div>
+      </div>
+    </form>
+    <div class="img_drop" id="imgfather"> <img id="showimage" src="http://detectpic-tupian.stor.sinaapp.com/init.png" onload="AutoResizeImage(465,360,this)"/></div><button id="selectpic" type="button" style="display:none;">确认检测</button></div>
+  <div class="col-md-5" id="rightinfo-single">
+  <h3>检测结果</br></h3>
+  </div>
+</div>
+
+<!--<div>
+单头像<input id="onehead" type="radio" checked="checked" name="bighead">
+多头像<input id="morehead" type="radio" name="bighead"><br>
+<input id="url" type="text">
+<button id="submit">确定提交</button>
+</div>--> 
+<!--  
+<form  method="POST" action="/tupian/detection.php">
+	url:<input type="text" name='urladd' ></br>
+	<input type='submit' name='request' value='url' >
+</form>
+-->
+<div class="divide"> </br>
+</div>
+<footer id="foot">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-2">
+        <div class="footcon">团队简介</div>
+      </div>
+      <div class="col-lg-4 col-lg-offset-1">
+        <h6>团队：纸鸢（FROM SCUT)</h6>
+        </br>
+        Web_FrontEnd：陈小萍</br>
+        Web_BackEnd ：陈丹丹</br>
+        Information&nbsp;&nbsp;&nbsp;&nbsp; ：South China University of Technology<br>
+        Computer Science and Technology </div>
+      <div class="col-lg-4 col-lg-offset-1">
+        <h6>友情链接</h6>
+        </br>
+        <a href="http://getbootstrap.com/" target="_blank" style="color:#fff">http://getbootstrap.com/</a></br>
+        <a href="http://open.youtu.qq.com/" target="_blank" style="color:#fff">http://open.youtu.qq.com/</a></br>
+        <a href="http://youtu.qq.com/" target="_blank" style="color:#fff">http://youtu.qq.com/</a></br>
+        <a href="http://chenxiaoping.sinaapp.com/" target="_blank" style="color:#fff">http://chenxiaoping.sinaapp.com/</a></div>
+    </div>
+  </div>
+</footer>
+<!--联系脚注end--> 
+<!--版权所有-->
+<div id="c">
+  <div class="container">
+    <p>Created by&nbsp;&nbsp;TEAM_纸鸢</p>
+  </div>
+</div>
+</footer>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.js"></script> 
+<script src="js/index.js"></script> 
+<script src="zxxFile.js"></script> 
+<script src="upload.js"></script> 
+<script>
+function AutoResizeImage(maxWidth,maxHeight,objImg){
+var img = new Image();
+img.src = objImg.src;
+var hRatio;
+var wRatio;
+var Ratio = 1;
+var w = img.width;
+var h = img.height;
+wRatio = maxWidth / w;
+hRatio = maxHeight / h;
+if (maxWidth ==0 && maxHeight==0){
+Ratio = 1;
+}else if (maxWidth==0){//
+if (hRatio<1) Ratio = hRatio;
+}else if (maxHeight==0){
+if (wRatio<1) Ratio = wRatio;
+}else if (wRatio<1 || hRatio<1){
+Ratio = (wRatio<=hRatio?wRatio:hRatio);
+}
+if (Ratio<1){
+w = w * Ratio;
+h = h * Ratio;
+}
+objImg.height = h;
+objImg.width = w;
+}
+</script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
